@@ -1,0 +1,16 @@
+{
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.19.2",
+    "mongoose": "^6.5.2",
+    "swagger": "^0.7.5",
+    "uuid": "^10.0.0"
+  }
+}
