@@ -4,12 +4,10 @@ require('dotenv').config();
 const connectDB= require ('./dataBase.js');
 const port = process.env.PORT;
 
-
 const business = require('./Rotes/businessRoutes.js')
 
 app.use(business)
 app.use(express.json());
-
 
 
 

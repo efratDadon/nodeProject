@@ -2,14 +2,16 @@ const mongoose = require('mongoose');
 // const userModel = require('./user.model');
 
 const meetingSchema = new mongoose.Schema({
-  meetingId: Number,
+  _id: {type:mongoose.Schema.Types.ObjectId},
   userId: String,
   date: String,
   startTime: String,
   duration: Number,
   location: String,
+  serviceId: {type:mongoose.Schema.Types.ObjectId,ref:'Service'}
 }, {versionKey: false});
 
 const meetModel = mongoose.model('Meeting', meetingSchema);
 
 module.exports = meetModel;
+
