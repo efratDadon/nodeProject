@@ -2,8 +2,13 @@ const { businessModel } = require('../Models/business.model');;
 
 const createBusiness = async (name, address) => {
   try {
+    // const businessId = uuidv4();
 
     const doc = new businessModel({ name, address });
+    // const result = await businessModel.insertOne(doc);
+
+    // const business = new Business({ name, address });
+    // await business.save();
     return await doc.save();
   } catch (error) {
     console.error('Error creating business:', error);
@@ -14,7 +19,6 @@ const createBusiness = async (name, address) => {
 const updateBusiness = async (id, name, address) => {
   try {
     const business = await businessModel.findByIdAndUpdate(id, { name, address }, { new: true });
-   console.log(business)
     if (!business) {
       throw new Error('Business not found');
     }

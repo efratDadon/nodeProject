@@ -5,7 +5,9 @@ const connectDB= require ('./dataBase.js');
 const port = process.env.PORT;
 
 const business = require('./Rotes/businessRoutes.js')
+const service = require('./Rotes/serviceRoutes.js')
 
+app.use(service)
 app.use(business)
 app.use(express.json());
 
