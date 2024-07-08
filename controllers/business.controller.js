@@ -4,13 +4,8 @@ const { Schema } = mongoose;
 
  const createBusinessController = async (req, res) => {
   try {
-    console.log(req.body);
-
     const { name, address } = req.body;
-    console.log(name,address);
-
     const business = await BusinessService.createBusiness(name, address);
-    console.log(business._id);
     res.json({
       message: 'success',
       data: business,

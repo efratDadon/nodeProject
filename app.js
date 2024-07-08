@@ -2,13 +2,23 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const connectDB= require ('./dataBase.js');
+const swaggerApp= require('./swagger.js')
 const port = process.env.PORT;
 
 const business = require('./Rotes/businessRoutes.js')
 const service = require('./Rotes/serviceRoutes.js')
+const user = require('./Rotes/userRoutes.js')
+const meeting = require('./Rotes/meetingRoutes.js')
+const login = require('./Rotes/loginRoutes.js')
 
 app.use(service)
 app.use(business)
+app.use(user)
+app.use(meeting)
+app.use(login)
+app.use('/',swaggerApp)
+
+
 app.use(express.json());
 
 

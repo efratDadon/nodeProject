@@ -5,7 +5,13 @@ const { createBusinessController, updateBusinessController } = require('../contr
 const bodyParser = require('body-parser')
 const  jsonParser = bodyParser.json();
 
+/**
+ * 
+ @swagger
+ */
+
 router.post('/businesses',jsonParser, createBusinessController);
+
 router.put('/businesses/:id', jsonParser,updateBusinessController);
 
 module.exports = router;

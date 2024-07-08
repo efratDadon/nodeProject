@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const serviceSchema = new mongoose.Schema({
-  // _id:  mongoose.Schema.Types.ObjectId,
+  // _id: { type: mongoose.Schema.Types.ObjectId },
   price: String,
   description: String,
-}, {versionKey: false});
+}, { versionKey: false });
 
 const serviceModel = mongoose.model('Service', serviceSchema);
 
-module.exports = {serviceModel};
+module.exports = { serviceModel };
