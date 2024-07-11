@@ -53,8 +53,9 @@ const signIn = async (userName, password) => {
         console.log("Password from request:", password);
 
         const options = { expiresIn: '1h' };
-        const token = jwt.sign({ id: findUser.userId }, process.env.SECRET_KEY, options);
-        return { token, userId: findUser._id };
+        const token = jwt.sign({ id: findUser._id, name: findUser.name, password: findUser.password }, process.env.SECRET_KEY, options);
+
+         return { token, userId: findUser._id };
     } catch (err) {
         console.error(err);
         throw err;

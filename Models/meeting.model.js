@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
-// const userModel = require('./user.model');
 
 const meetingSchema = new mongoose.Schema({
-  // _id: {type:mongoose.Schema.Types.ObjectId},
   date: String,
   startTime: String,
   duration: Number,
