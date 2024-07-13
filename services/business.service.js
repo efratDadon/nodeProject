@@ -2,13 +2,8 @@ const { businessModel } = require('../Models/business.model');
 
 const createBusiness = async (name, address) => {
   try {
-    // const businessId = uuidv4();
 
     const doc = new businessModel({ name, address });
-    // const result = await businessModel.insertOne(doc);
-
-    // const business = new Business({ name, address });
-    // await business.save();
     return await doc.save();
   } catch (error) {
     console.error('Error creating business:', error);
