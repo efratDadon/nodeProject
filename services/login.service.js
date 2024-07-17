@@ -16,6 +16,11 @@ const getUsersFromDatabase = async () => {
 
 const signUp = async (name, address, password, email) => {
     try {
+        const existingUser = await userModel.findOne({ email });
+        if (existingUser) {
+          throw new Error('User validation failed: email: Email already exists');
+        }
+
         const newUser = {
             name,
             address,
@@ -50,8 +55,9 @@ const signIn = async (userName, password) => {
         }
 
         console.log("User from DB:", findUser);
-        console.log("Password from request:", password);
-
+        const message = `Hello ${findUser.name}! Welcome!!!`;
+        console.log(message); 
+        
         const options = { expiresIn: '1h' };
         const token = jwt.sign({ id: findUser._id, name: findUser.name, password: findUser.password }, process.env.SECRET_KEY, options);
 
@@ -61,6 +67,7 @@ const signIn = async (userName, password) => {
         throw err;
     }
 };
+
 
 module.exports = {
     signUp,
