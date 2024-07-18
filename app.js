@@ -5,12 +5,12 @@ const connectDB = require('./dataBase.js');
 const swaggerApp = require('./swagger.js');
 const port = process.env.PORT 
 
-const business = require('./Routes/businessRoutes.js');
-const service = require('./Routes/serviceRoutes.js');
-const meeting = require('./Routes/meetingRoutes.js');
-const login = require('./Routes/loginRoutes.js');
-const user = require('./Routes/userRoutes.js');
-const { authenticateToken } = require('./Middlewares/authMiddleware.js');
+const business = require('./routes/businessRoutes.js');
+const service = require('./routes/serviceRoutes.js');
+const meeting = require('./routes/meetingRoutes.js');
+const login = require('./routes/loginRoutes.js');
+const user = require('./routes/userRoutes.js');
+const { authenticateToken } = require('./middlewares/authMiddleware.js');
 
 app.use(express.json());
 

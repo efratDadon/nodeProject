@@ -1,5 +1,5 @@
-const { userModel } = require('../Models/user.model') 
-const { createToken } = require('../Middlewares/authMiddleware');
+const { userModel } = require('../models/user.model') 
+const { createToken } = require('../middlewares/authMiddleware');
 
 
 

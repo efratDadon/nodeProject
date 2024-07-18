@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt'); 
 const connectDB = require('../dataBase'); 
-const { userModel } = require('../Models/user.model');
+const { userModel } = require('../models/user.model');
 const { updateMeeting } = require('../services/meeting.service');
 const { signUp, signIn } = require('../services/login.service');
 

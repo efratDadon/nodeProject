@@ -1,4 +1,4 @@
-const { serviceModel } = require('../Models/services.model');
+const { serviceModel } = require('../models/services.model');
 
 //using Template literals
 async function createService(price, description) {

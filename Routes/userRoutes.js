@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { createUserController } = require('../controllers/user.controller');
-const { isAdmin } = require('../Middlewares/authMiddleware');
+const { isAdmin } = require('../middlewares/authMiddleware');
 const bodyParser = require('body-parser');
 router.use(bodyParser.json());
 

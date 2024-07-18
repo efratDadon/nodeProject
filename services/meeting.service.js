@@ -1,4 +1,4 @@
-const { meetModel } = require('../Models/meeting.model');
+const { meetModel } = require('../models/meeting.model');
 
 const createMeeting = async (date, startTime, duration, location, serviceId) => {
     try {
